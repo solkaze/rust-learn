@@ -1,0 +1,18 @@
+services:
+  rust-work:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USER_ID=${USER_ID}
+        - GROUP_ID=${GROUP_ID}
+        - USER_NAME=${USER_NAME}
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    container_name: rust-work
+    tty: true
+    stdin_open: true
+    image: rust-dev:latest
+    env_file:
+      - .env

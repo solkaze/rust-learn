@@ -1,0 +1,39 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "Rust Learn (bookworm)",
+  "image": "rust-learn:bookworm",
+                // 先に docker build したローカルイメージを使用
+  "remoteUser": "dev",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+
+  "remoteEnv": {
+    "HOME": "/home/dev",
+    "SHELL": "/bin/bash",
+    "LANG": "ja_JP.UTF-8",
+    "LC_ALL": "ja_JP.UTF-8"
+  },
+  "userEnvProbe": "none",
+  "overrideCommand": true,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "vadimcn.vscode-lldb",
+        "mosapride.zenkaku",
+        "shardulm94.trailing-spaces",
+        "dustypomerleau.rust-syntax",
+        "fill-labs.dependi"
+      ],
+      "settings": {
+        "rust-analyzer.cargo.targetDir": "/workspace/target",
+        "rust-analyzer.checkOnSave": true,
+        "rust-analyzer.check": {
+          "command": "clippy"
+        }
+      }
+    }
+  },
+  "updateRemoteUserUID": false
+}
