@@ -1,20 +1,11 @@
 // .devcontainer/devcontainer.json
 {
   "name": "Rust Learn (bookworm)",
-  "image": "rust-learn:bookworm",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "rust-work",
                 // 先に docker build したローカルイメージを使用
   "remoteUser": "dev",
   "workspaceFolder": "/workspace",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-
-  "remoteEnv": {
-    "HOME": "/home/dev",
-    "SHELL": "/bin/bash",
-    "LANG": "ja_JP.UTF-8",
-    "LC_ALL": "ja_JP.UTF-8"
-  },
-  "userEnvProbe": "none",
-  "overrideCommand": true,
   "customizations": {
     "vscode": {
       "extensions": [
@@ -35,5 +26,8 @@
       }
     }
   },
-  "updateRemoteUserUID": false
+  "updateRemoteUserUID": false,
+  "runServices": [
+    "rust-work"
+  ]
 }
