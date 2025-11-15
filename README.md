@@ -1,24 +1,37 @@
-# Cargo よく使うコマンド集
+# Rust Cargo 練習環境構築リポジトリ
 
-このリポジトリは Rust のパッケージマネージャである Cargo のよく使うコマンドをまとめたものです。
+このリポジトリは、Rust のパッケージマネージャである Cargo を使ったプロジェクトの練習環境を提供します。Docker と Visual Studio Code の DevContainer 機能を利用して、簡単に開発環境をセットアップできます。
+
+## 機能
+
+- Rust と Cargo のインストール済み環境
+- Docker コンテナ内での開発環境構築
+- VSCode DevContainer サポート
 
 ## 使い方
+1. リポジトリをクローンします。
 
-各コマンドは `cargo <command>` の形で実行します。例えば、 `cargo build` はプロジェクトをビルドします。
+```bash
+git clone https://github.com/your-username/rust-cargo-practice.git
+cd rust-cargo-practice
+```
 
-## コマンド一覧
+2. Docker と VSCode をインストールします。
+3. VSCode でリポジトリを開き、DevContainer 機能を使用してコンテナ内で開発環境を起動します。
+4. コンテナ内で Rust と Cargo を使用してプロジェクトを作成・管理します。
+```bash
+cargo new my_project
+cd my_project
+cargo build
+cargo run
+```
 
+## よく使うCargoコマンド
 - `cargo new <project_name>`: 新しい Rust プロジェクトを作成します。
 - `cargo build`: プロジェクトをビルドします。
 - `cargo run`: プロジェクトをビルドして実行します。
 - `cargo test`: プロジェクトのテストを実行します。
-- `cargo clean`: ビルド成果物を削除します。
-- `cargo doc --open`: ドキュメントを生成してブラウザで開きます。
+- `cargo add <dependency>`: プロジェクトに依存関係を追加します。（`cargo-edit` クレートが必要です）
 - `cargo update`: 依存関係を最新バージョンに更新します。
-- `cargo check`: コードをコンパイルせずに型チェックを行います。
-- `cargo fmt`: コードを自動的にフォーマットします。
-- `cargo clippy`: コードの静的解析を行い、改善点を提案します。
-
-## まとめ
-
-このリポジトリを参考にして、Cargo のコマンドを効率的に活用してください。Rust の開発がよりスムーズになることを願っています。
+- `cargo clean`: ビルド成果物を削除します。
+- `cargo doc --open`: プロジェクトのドキュメントを生成し、ブラウザで開きます。
