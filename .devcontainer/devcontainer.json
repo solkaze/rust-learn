@@ -4,7 +4,7 @@
   "dockerComposeFile": "../compose.yaml",
   "service": "rust-work",
                 // 先に docker build したローカルイメージを使用
-  "remoteUser": "dev",
+  "remoteUser": "d${localEnv:USER_NAME}",
   "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
