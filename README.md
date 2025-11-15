@@ -12,8 +12,8 @@
 1. リポジトリをクローンします。
 
 ```bash
-git clone https://github.com/your-username/rust-cargo-practice.git
-cd rust-cargo-practice
+git clone https://github.com/your-username/rust-learn.git
+cd rust-learn
 ```
 
 2. Docker と VSCode をインストールします。
