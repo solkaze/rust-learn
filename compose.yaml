@@ -4,9 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - USER_ID=${USER_ID}
-        - GROUP_ID=${GROUP_ID}
-        - USER_NAME=${USER_NAME}
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
     volumes:
       - .:/workspace
     working_dir: /workspace
@@ -16,3 +15,6 @@ services:
     image: rust-dev:latest
     env_file:
       - .env
+    environment:
+      TERM: xterm-kitty
+    command: /usr/bin/zsh

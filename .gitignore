@@ -2,3 +2,7 @@ rust/
 target/
 
 .env
+
+xterm*
+
+.p10k.zsh

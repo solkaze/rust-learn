@@ -4,7 +4,7 @@
   "dockerComposeFile": "../compose.yaml",
   "service": "rust-work",
                 // 先に docker build したローカルイメージを使用
-  "remoteUser": "d${localEnv:USER_NAME}",
+  "remoteUser": "${localEnv:USER_NAME}",
   "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
@@ -13,7 +13,6 @@
         "tamasfe.even-better-toml",
         "vadimcn.vscode-lldb",
         "mosapride.zenkaku",
-        "shardulm94.trailing-spaces",
         "dustypomerleau.rust-syntax",
         "fill-labs.dependi"
       ],
@@ -22,7 +21,13 @@
         "rust-analyzer.checkOnSave": true,
         "rust-analyzer.check": {
           "command": "clippy"
-        }
+        },
+        "terminal.integrated.env.linux": {
+          "TERM": "xterm-256color"
+        },
+        "terminal.integrated.fontFamily": "MesloLGS NF",
+        "terminal.integrated.fontSize": 14,
+        "terminal.integrated.defaultProfile.linux": "zsh"
       }
     }
   },
